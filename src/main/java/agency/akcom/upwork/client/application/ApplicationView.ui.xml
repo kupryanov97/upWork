@@ -1,0 +1,35 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
+
+    <ui:with field="res" type="agency.akcom.upwork.client.resources.AppResources"/>
+
+    <ui:with field="nameTokens" type="agency.akcom.upwork.client.place.NameTokens"/>
+
+    <g:HTMLPanel>
+
+        <g:SimplePanel ui:field="main"/>
+    <b:Navbar position="FIXED_TOP" ui:field="bar">
+        <b:Container paddingRight="15" paddingLeft="15" >
+        <b:NavbarHeader>
+            <b:NavbarBrand>HOME</b:NavbarBrand>
+            <b:NavbarCollapseButton dataTarget="#navbar-collapse"/>
+        </b:NavbarHeader>
+
+        <b:NavbarCollapse b:id="navbar-collapse">
+            <b:NavbarNav>
+                <b:AnchorListItem targetHistoryToken="{nameTokens.getSEARCH}" >Search</b:AnchorListItem>
+                <b:AnchorListItem targetHistoryToken="{nameTokens.getADMIN}">Admin</b:AnchorListItem>
+                <b:AnchorListItem targetHistoryToken="{nameTokens.getMAIN}">Log In UPWORK</b:AnchorListItem>
+                <b:AnchorListItem targetHistoryToken="{nameTokens.getSTATS}">Статка</b:AnchorListItem>
+
+            </b:NavbarNav>
+
+
+
+
+        </b:NavbarCollapse>
+        </b:Container>
+    </b:Navbar>
+    </g:HTMLPanel>
+</ui:UiBinder>

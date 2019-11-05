@@ -1,0 +1,4 @@
+cron:
+- description: "mailing jobs"
+  url: /cron?task=mailing_jobs
+  schedule: every day 07:00

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+        "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to='upwork'>
+
+
+    <inherits name="com.google.gwt.inject.Inject"/>
+    <!-- Тег <inherits> с помощью атрибута name указывает GWT-модуль, содержимое которого
+    наследуется данным GWT-модулем -->
+
+    <!-- Стандартное наследование -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
+    <inherits name='com.gwtplatform.dispatch.Dispatch' />
+
+
+
+    <!-- GWT-модули стилей по умолчанию для GUI-компонентов приложения, предоставляемые
+    GWT-фреймворком -->
+
+    <!-- Bootstrapper -->
+    <set-configuration-property name="gwtp.bootstrapper"
+                                value="agency.akcom.upwork.client.gin.BootstrapperImpl" />
+
+    <inherits name='com.google.gwt.user.theme.dark.Dark'/>
+
+
+    <!-- Добавленное -->
+    <inherits name="com.google.api.gwt.oauth2.OAuth2" />
+    <inherits name="com.google.web.bindery.autobean.AutoBean" />
+    <inherits name="com.google.gwt.json.JSON" />
+
+    <inherits name="org.gwtbootstrap3.GwtBootstrap3" />
+    <inherits name="org.gwtbootstrap3.extras.select.Select"/>
+
+    <!--Тег <replace-with> с помощью атрибута class указывает класс, которым нужно заменять
+    при выполнении определенных условий. Условия замены определяются с помощью
+    дочерних тегов:
+    when-type-is — с помощью атрибута class указывает единственный Java-тип замены;
+
+    when-property-is — с помощью атрибутов name и value указывает значение свойства,
+    при котором производится замена;
+    when-type-assignable — с помощью атрибута class указывает Java-тип, к которому
+    приводятся типы замены;
+    all, any, none — комбинируют теги <when> в выражение.-->
+
+
+
+
+    <!-- Тег <extend-configuration-property> с помощью атрибутов name и value расширяет значение
+    ранее определенного конфигурационного свойства. -->
+    <extend-configuration-property name="gin.ginjector.modules"
+                                   value="agency.akcom.upwork.client.gin.ClientModule"/>
+
+    <extend-configuration-property name="gin.ginjector.extensions"
+                                   value="agency.akcom.upwork.client.gin.MyGinjector"/>
+
+    <inherits name="org.gwtbootstrap3.extras.toggleswitch.ToggleSwitch"/>
+
+    <inherits name="com.google.gwt.uibinder.GinUiBinder"/>
+    <!-- Пакеты с расширениями .client и .shared определены в конфигурационном файле
+    .gwt.xml тегом <source> для компиляции в JavaScript-код -->
+    <source path='client'/>
+    <source path='shared'/>
+
+
+    <set-configuration-property name="CssResource.enableGss" value="true"/>
+
+    <public path=''>
+        <include name='*.css' />
+    </public>
+    <!-- theme -->
+    <stylesheet src='style.css' />
+
+    <set-configuration-property name="CssResource.conversionMode"    value="strict" />
+</module>

@@ -1,0 +1,269 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
+             xmlns:b.html="urn:import:org.gwtbootstrap3.client.ui.html"
+             xmlns:b.gwt="urn:import:org.gwtbootstrap3.client.ui.gwt"
+             xmlns:m="urn:import:agency.akcom.upwork.client.widget"
+             xmlns:gg="urn:import:agency.akcom.upwork.client.widget.table"
+>
+
+
+    <b:Container paddingTop="10">
+        <b:Row>
+            <b:Column size="XS_12">
+                <b:Panel>
+                    <b:PanelHeader>
+                        <b:Heading size="H3" text="Search Works"/>
+                    </b:PanelHeader>
+                    <b:PanelBody>
+                        <b:InputGroup>
+                            <b:TextBox ui:field="maintext" placeholder="search" autoComplete="false"/>
+
+                            <b:InputGroupButton>
+                                <b:Button ui:field="settings" icon="COG" addStyleNames="button2"></b:Button>
+                            </b:InputGroupButton>
+
+                            <b:InputGroupButton>
+                                <b:Button ui:field="search" text="Search" addStyleNames="button2"></b:Button>
+                            </b:InputGroupButton>
+
+                            <b:InputGroupButton>
+                                <b:Button ui:field="get" text="Save" addStyleNames="gwt-PushButton"></b:Button>
+                            </b:InputGroupButton>
+
+
+                        </b:InputGroup>
+
+                        <b.html:ClearFix addStyleNames="margin"/>
+                        <b:Collapse ui:field="collapSettings" b:id="collapSettings">
+                            <b:Panel>
+                                <b:PanelHeader>
+                                    <b:Heading size="H3" text="Setting"/>
+                                </b:PanelHeader>
+                                <b:PanelBody>
+                                    <b:Row addStyleNames="hr">
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Job Type</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio1" text="Any Job Type" ui:field="jobAnyJobType"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio1" text="Hourly" ui:field="jobHourly"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio1" text="Fixed Price" ui:field="jobFixedPrice"/>
+                                            </b:FormGroup>
+                                        </b:Column>
+
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Experience Level</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio2" text="Any Experience Level"
+                                                               ui:field="expAnyExperienceLevel"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio2" text="Entry Level - $"
+                                                               ui:field="expEntryLevel"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio2" text="Intermediate - $$"
+                                                               ui:field="expIntermediate"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio2" text="Expert - $$$" ui:field="expExpert"/>
+                                            </b:FormGroup>
+                                        </b:Column>
+
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Client History</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio3" text="Any Client History"
+                                                               ui:field="clientHisExpert"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio3" text="No hires"
+                                                               ui:field="clientHisNohires"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio3" text="1 to 9 hires"
+                                                               ui:field="clientHis1to9hires"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio3" text="10+ hires"
+                                                               ui:field="clientHis10hires"/>
+                                            </b:FormGroup>
+                                        </b:Column>
+
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Client Info</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio4" text="My Previous Clients"
+                                                               ui:field="clientMyPreviousClients"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio4" text="Payment Verified"
+                                                               ui:field="clientPaymentVerified"/>
+                                            </b:FormGroup>
+
+                                        </b:Column>
+                                    </b:Row>
+
+                                    <b:Row addStyleNames="hr">
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Number of Proposals</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio5" text="Any Number of Proposals"
+                                                               ui:field="numberAnyNumber"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio5" text="Less than 5"
+                                                               ui:field="numberLessThan5"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio5" text="5 to 10" ui:field="number5To10"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio5" text="10 to 15" ui:field="number10To15"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio5" text="15 to 20" ui:field="number15To20"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio5" text="20 to 50" ui:field="number20To50"/>
+                                            </b:FormGroup>
+                                        </b:Column>
+
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Budget</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio6" text="Any Budget" ui:field="budgetAny"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio6" text="Less than $100"
+                                                               ui:field="budget100"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio6" text="$100 - $500" ui:field="budget500"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio6" text="$500 - $1k" ui:field="budget1k"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio6" text="$1k - $5k" ui:field="budget5k"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio6" text="$5k+" ui:field="budget5kup"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:TextBox ui:field="min" placeholder="min$" addStyleNames="min"/>
+                                                <b:TextBox ui:field="max" placeholder="max$" addStyleNames="min"/>
+                                            </b:FormGroup>
+                                        </b:Column>
+
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Hours Per Week</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio7" text="Any Hours Per Week"
+                                                               ui:field="hoursAny"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio7" text="Less than 30 hrs/week"
+                                                               ui:field="hoursLess30hrs"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio7" text="More than 30 hrs/week"
+                                                               ui:field="hoursMore30hrs"/>
+                                            </b:FormGroup>
+
+                                        </b:Column>
+
+                                        <b:Column size="SM_3">
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:FormLabel>Project Length</b:FormLabel>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio8" text="Any Project Length"
+                                                               ui:field="projectAny"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio8" text="Less than 1 month"
+                                                               ui:field="projectLessthan1month"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio8" text="1 to 3 months"
+                                                               ui:field="project1to3months"/>
+                                            </b:FormGroup>
+
+                                            <b:FormGroup addStyleNames="grup">
+                                                <b:RadioButton name="radio8" text="More than 3 months"
+                                                               ui:field="projectMorethan3months"/>
+
+                                            </b:FormGroup>
+
+                                        </b:Column>
+
+                                    </b:Row>
+
+                                </b:PanelBody>
+                            </b:Panel>
+                        </b:Collapse>
+
+                        <b:Collapse ui:field="collapseOne" b:id="collapseOne">
+
+                             <gg:TablePresenter ui:field="test"> </gg:TablePresenter>
+
+                        </b:Collapse>
+
+
+                    </b:PanelBody>
+                </b:Panel>
+            </b:Column>
+        </b:Row>
+    </b:Container>
+</ui:UiBinder>

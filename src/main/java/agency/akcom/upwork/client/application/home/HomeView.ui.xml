@@ -1,0 +1,22 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g='urn:import:com.google.gwt.user.client.ui'
+        xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
+
+
+    <g:HTMLPanel>
+
+        <g:HTMLPanel>
+
+            <div id="Win">
+                <div id="form">
+                        <form class="form-signin">
+                            <b:Button ui:field="GoogleButton"  text="in Google" addStyleNames="btn-primary"></b:Button>
+                        </form>
+                </div>
+            </div>
+        </g:HTMLPanel>
+        
+    </g:HTMLPanel>
+
+
+</ui:UiBinder>
