@@ -1,6 +1,7 @@
 body {
     padding-top: 70px;
-    background-image:url("https://i.pinimg.com/originals/17/0e/da/170eda7473a17cd8c09e40d36a917f3c.jpg")
+    background-size: 100%;
+    background-image:url("https://cdn.bitrix24.eu/b6631369/landing/288/2885d2cc172815a2fec84013ede492e0/photo-1520085601670-ee14aa5fa3e8.jpg")
 }
 
 pre.prettyprint {

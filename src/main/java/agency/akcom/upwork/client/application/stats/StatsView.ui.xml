@@ -6,18 +6,49 @@
              xmlns:m="urn:import:agency.akcom.upwork.client.widget"
              xmlns:b3="urn:import:org.gwtbootstrap3.extras.toggleswitch.client.ui"
              xmlns:b.html="urn:import:org.gwtbootstrap3.client.ui.html">
-    <g:HTMLPanel>
-        <h1>AAAAAAAAAAAAAAAAAAA</h1>
-        <g:HTMLPanel>
+    <b:Container paddingTop="10">
+        <b:Row>
+            <b:Column size="XS_12">
+                <b:Panel >
+                    <b:PanelHeader>
+                        <b:Heading size="H3" text="Учёт рабочего времени сотрудников" />
+                    </b:PanelHeader>
+                    <b:PanelBody>
 
-            <div id="Win">
-                <div id="form">
-                    <form class="form-signin">
-                        <b:Button ui:field="GoogleButton"  text="in Google" addStyleNames="btn-primary"></b:Button>
-                    </form>
-                </div>
-            </div>
-        </g:HTMLPanel>
+                        <b:InputGroup>
+                            <b:TextBox placeholder="search" autoComplete="false"/>
 
-    </g:HTMLPanel>
+                            <b:InputGroupButton>
+                                <b:Button ui:field="search" text="Search" addStyleNames="button2"></b:Button>
+                            </b:InputGroupButton>
+
+                        </b:InputGroup>
+
+                        <b.html:ClearFix addStyleNames="margin"/>
+
+                        <m:MyCellTable width="100%" bordered="true" condensed="true" striped="true" hover="true"
+                                       ui:field="userTable"  />
+                        <b:Pagination ui:field="userTablePagination" />
+                        <b:Button ui:field="button"/>
+                        <b3:ToggleSwitch ui:field="submitOnEnterToggle" size="MINI" value="true" />
+                        <b:Modal title="Справка" closable="true" fade="true" dataBackdrop="STATIC" dataKeyboard="true" ui:field="modal" b:id="modal">
+                            <b:ModalBody>
+                                <g:HTML><h2> Куприянов Иван:</h2><br/>
+                                Понедельник: 6 часов 34 минут с 12 до 18.34. Обед с 13.12 до 13.45.<br/>
+                                    Понедельник: 6 часов 34 минут с 12 до 18.34. Обед с 13.12 до 13.45.<br/>
+                                    Вторник: 6 часов 34 минут с 12.08 до 18.34. Обед с 13.12 до 13.45.<br/>
+                                    Среда: 6 часов 34 минут с 12 до 18.34. Обед с 13.12 до 13.45.<br/>
+                                    Четверг: 6 часов 34 минут с 12 до 18.34. Обед с 13.12 до 13.45.<br/>
+                                    Пятница: информация отсутствует.
+                                </g:HTML>
+                            </b:ModalBody>
+                            <b:ModalFooter>
+                                <b:Button type="DANGER" dataDismiss="MODAL">Close</b:Button>
+                            </b:ModalFooter>
+                        </b:Modal>
+                    </b:PanelBody>
+                </b:Panel>
+            </b:Column>
+        </b:Row>
+    </b:Container>
 </ui:UiBinder>
